@@ -3,7 +3,7 @@
 
 __author__ = "Muhammad Bilal Shaikh"
 __copyright__ = "Copyright 2021, AR-ResNetX"
-__license__ = "GPL"
+__license__ = "MIT"
 __version__ = "1.0.1"
 __email__ = "mbs.techy@gmail.com"
 __status__ = "Production"
