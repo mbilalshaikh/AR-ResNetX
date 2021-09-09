@@ -3,7 +3,7 @@
 
 __author__ = "Muhammad Bilal Shaikh"
 __copyright__ = "Copyright 2021, AR-ResNetX"
-__license__ = "MIT"
+__license__ = "GPL"
 __version__ = "1.0.1"
 __email__ = "mbs.techy@gmail.com"
 __status__ = "Production"
@@ -20,7 +20,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 import torch.optim as optim
-from torch.utils.tensorboard import SummaryWriter  # TensorBoard support
+
 
 # import torchvision module to handle image manipulation
 
@@ -73,8 +73,8 @@ def flatten_list(t):
 
 
 def train(TRAIN_DATA_PATH, TEST_DATA_PATH, HPARAM):
-    print torch.__version__
-    print torchvision.__version__
+    print(torch.__version__)
+    print(torchvision.__version__)
 
     # set device
 
@@ -134,7 +134,7 @@ def train(TRAIN_DATA_PATH, TEST_DATA_PATH, HPARAM):
     def train(model, loader, epochs=1):
         model.to(device)
         model.train()
-        print 'Training...'
+        print('Training...')
         for epoch in range(epochs):
             start = time.time()
             model.train()
@@ -168,7 +168,7 @@ def train(TRAIN_DATA_PATH, TEST_DATA_PATH, HPARAM):
 
     train(model, train_data_loader)
 
-    print 'Extracting Features...'
+    print('Extracting Features...')
     (train_feat, train_lbls) = extract_features(model,
             train_data_loader)
     (test_feat, test_lbls) = extract_features(model, test_data_loader)
@@ -197,7 +197,7 @@ def svm(
     x_lbls,
     y_lbls,
     ):
-    print 'Train-Without FFT'
+    print ('Train-Without FFT')
     svm = SVC(kernel='linear').fit(X, x_lbls)
     preds = svm.predict(Y)
     print ('SVM Accuracy:', metrics.accuracy_score(y_lbls, preds))
